@@ -11,8 +11,9 @@ The purpose of this project is to:
 
 ## Files
 1. BeeWalk.py: Python script for preprocessing, analysing, and visualising the data.
-2. Seasonal_Analysis.csv: Processed data summarising seasonal trends in bee counts and extreme events.
-3. Temperature_Analysis.csv: Aggregated data showing the relationship between temperature and bee counts.
+2. BeeWalk_data: Zipped folder containing BeeWalk_data.csv file.
+3. Seasonal_Analysis.csv: Processed data summarising seasonal trends in bee counts and extreme events.
+4. Temperature_Analysis.csv: Aggregated data showing the relationship between temperature and bee counts.
 
 ## Instructions to Run the Code
 Ensure you have the following installed:
