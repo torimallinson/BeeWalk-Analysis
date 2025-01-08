@@ -22,9 +22,10 @@ Ensure you have the following installed:
 You can install the required libraries using: pip install pandas matplotlib seaborn
 
 ## Running the Code
-1.	Place the BeeWalk dataset file (BeeWalk_data.csv) in the same directory as the script.
-2.	Run the Python script: BeeWalk.py
-3.	Output files (Seasonal_Analysis.csv and Temperature_Analysis.csv) will be generated in the same directory.
+1.	Unzip the BeeWalk_data file
+2.	Place the BeeWalk dataset file (BeeWalk_data.csv) in the same directory as the script.
+3.	Run the Python script: BeeWalk.py
+4.	Output files (Seasonal_Analysis.csv and Temperature_Analysis.csv) will be generated in the same directory.
 
 ## Outputs
 Seasonal_Analysis.csv
