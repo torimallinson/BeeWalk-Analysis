@@ -1,7 +1,7 @@
 # README for BeeWalk Dataset Analysis
 
 ## Project Overview
-This project analyses the BeeWalk dataset to investigate seasonal variations in bee counts and their relationship with extreme climate events, including extreme heat during summer and extreme cold during spring. The analysis incorporates statistical tests, data visualisation, and the generation of outputs for further insights.
+This project analyses the BeeWalk dataset from The Bumblebee Conservation Trust to investigate seasonal variations in bee counts and their relationship with extreme climate events, including extreme heat during summer and extreme cold during spring. The analysis incorporates statistical tests, data visualisation, and the generation of outputs for further insights.
 
 ## Features of the Analysis
 1. **Seasonal Analysis:**
