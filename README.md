@@ -1,52 +1,84 @@
-# BeeWalk-Analysis
-Data Science and Machine Learning for the Biosciences - SWBio Project
+# README for BeeWalk Dataset Analysis
 
-This repository contains code and documentation for analysing seasonal variations in bee counts and their relationship to extreme climate events, such as extreme heat in summer or extreme cold in spring. The dataset used is the BeeWalk dataset (2008-2023) from The Bumblebee Conservation Trust.
+## Project Overview
+This project analyses the BeeWalk dataset to investigate seasonal variations in bee counts and their relationship with extreme climate events, including extreme heat during summer and extreme cold during spring. The analysis incorporates statistical tests, data visualisation, and the generation of outputs for further insights.
 
-## Objectives
-The purpose of this project is to: 
+## Features of the Analysis
+1. **Seasonal Analysis:**
+   - Faceted line plots to visualise bee count trends for each season across years.
 
-1.	Investigate seasonal variations in bee counts across years.
-2.	Examine the effects of extreme temperature events (heat and cold) on bee counts.
+2. **Extreme Climate Events:**
+   - Heatmaps showcasing extreme heat and cold events across years and seasons.
+   - Analysis of trends in bee counts during extreme and non-extreme climate events.
 
-## Files
-1. BeeWalk.py: Python script for preprocessing, analysing, and visualising the data.
-2. BeeWalk_data: Zipped folder containing BeeWalk_data.csv file.
-3. Seasonal_Analysis.csv: Processed data summarising seasonal trends in bee counts and extreme events.
-4. Temperature_Analysis.csv: Aggregated data showing the relationship between temperature and bee counts.
+3. **Statistical Tests:**
+   - T-tests and Mann-Whitney U-tests to compare bee counts in extreme vs non-extreme climate events for spring and summer.
 
-## Instructions to Run the Code
-Ensure you have the following installed:
-1. Python 3.7 or higher
-2. Required Python libraries: panda, matplotlib & seaborn
+## Prerequisites
+- **Python version:** 3.7 or higher
+- **Required Python libraries:**
+  - pandas
+  - matplotlib
+  - seaborn
+  - scipy
 
-You can install the required libraries using: pip install pandas matplotlib seaborn
+You can install the required libraries using the following command:
+```bash
+pip install pandas matplotlib seaborn scipy
+```
 
-## Running the Code
-1.	Unzip the BeeWalk_data file
-2.	Place the BeeWalk dataset file (BeeWalk_data.csv) in the same directory as the script.
-3.	Run the Python script: BeeWalk.py
-4.	Output files (Seasonal_Analysis.csv and Temperature_Analysis.csv) will be generated in the same directory.
+## Dataset
+The dataset `BeeWalk_data.csv` contains the following key columns:
+- `Year`: Year of observation.
+- `Month`: Month of observation.
+- `temperature`: Temperature recorded during observations.
+- `TotalCount`: Total number of bees observed.
+
+### Derived Columns:
+- `Season`: Assigned based on the month (Winter, Spring, Summer, Autumn).
+- `ExtremeHeat`: Indicates extreme heat events during summer.
+- `ExtremeCold`: Indicates extreme cold events during spring.
+- `ExtremeEvent`: Combines `ExtremeHeat` and `ExtremeCold` into a single categorical variable.
+
+## Steps to Run the Code
+1. Unzip and place the `BeeWalk_data.csv` file in the same directory as the script.
+2. Run the script using the following command:
+   ```bash
+   python BeeWalk.py
+   ```
 
 ## Outputs
-Seasonal_Analysis.csv
-1. Contains average bee counts by season and year.
-2. Includes counts of extreme heat and cold events.
+### Visualisation Outputs:
+1. `total_bee_counts_over_years.png`: Total bee counts over the years.
+2. `seasonal_bee_counts.png`: Seasonal bee counts faceted by season.
+3. `extreme_heat_events_heatmap.png`: Heatmap of extreme heat events by year and season.
+4. `extreme_cold_events_heatmap.png`: Heatmap of extreme cold events by year and season.
+5. `trends_extreme_events.png`: Trends in bee counts for extreme and non-extreme events.
+6. `comparison_extreme_non_extreme.png`: Boxplots comparing bee counts for extreme vs non-extreme events by season.
 
-Temperature_Analysis.csv:
-1. Shows average bee counts for different temperature ranges, grouped by season.
+### Statistical Test Outputs:
+- **T-test Results:**
+  - Extreme Cold vs No Extreme Event (Spring)
+  - Extreme Heat vs No Extreme Event (Summer)
+- **Mann-Whitney U-test Results:**
+  - Extreme Cold vs No Extreme Event (Spring)
+  - Extreme Heat vs No Extreme Event (Summer)
 
-## Analysis Summary
-Seasonal Trends: The analysis visualises how bee counts vary across seasons and years.
+### CSV Outputs:
+- `Spring_Summer_Extreme_Analysis.csv`: Processed data for spring and summer, including extreme events.
 
-Temperature Effects: Scatter plots reveal the relationship between temperature and bee counts, highlighting trends and correlations.
+## Key Functions
+- `assign_season(month)`: Assigns seasons based on the month.
+- `mark_extreme(row)`: Categorises rows based on extreme heat or cold events.
+- `perform_stat_tests(group1, group2, test_name)`: Performs T-tests and Mann-Whitney U-tests with error handling.
 
-Extreme Events:
-1. Extreme heat (e.g., temperatures > 30°C in summer).
-2. Extreme cold (e.g., temperatures < 5°C in spring)
-3. Events are highlighted in visualisations to illustrate their impact.
+## Notes
+- Ensure the dataset contains sufficient data for statistical tests; otherwise, results may not be meaningful.
+- Thresholds for extreme events can be adjusted in the script:
+  ```python
+  EXTREME_HEAT_THRESHOLD = 30  # Adjust for summer
+  EXTREME_COLD_THRESHOLD = 5   # Adjust for spring
+  ```
 
-## Visualisations
-1. Seasonal Variations: Line plots showing average bee counts by season.
-2. Temperature Effects: Scatter plots depicting bee counts versus temperature across seasons.
-
+## Contact
+For any questions or issues, please contact the author of this analysis.
